@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kickmandu - Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 bg-black text-white">
+    <h1 class="text-2xl font-bold">Kickmandu</h1>
+    <button onclick="toggleCart()" class="relative">
+      🛒
+      <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 rounded-full">0</span>
+    </button>
+  </header>
+
+  <!-- Product Section (Demo Products) -->
+  <section class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="border rounded p-4 flex flex-col items-center">
+      <h2 class="text-lg font-semibold mb-2">Sneaker A</h2>
+      <button onclick="addToCart('Sneaker A')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+    </div>
+    <div class="border rounded p-4 flex flex-col items-center">
+      <h2 class="text-lg font-semibold mb-2">Sneaker B</h2>
+      <button onclick="addToCart('Sneaker B')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+    </div>
+    <div class="border rounded p-4 flex flex-col items-center">
+      <h2 class="text-lg font-semibold mb-2">Sneaker C</h2>
+      <button onclick="addToCart('Sneaker C')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Cart Drawer -->
+  <div id="cartDrawer" class="fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform z-50 p-4 flex flex-col">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold">Your Cart</h2>
+      <button onclick="toggleCart()" class="text-gray-500 hover:text-black">✖</button>
+    </div>
+    <div id="cartItems" class="flex-grow space-y-2 overflow-y-auto"></div>
+    <button onclick="openLoginModal()" class="mt-4 bg-black text-white py-2 rounded hover:bg-gray-800">Continue to Login</button>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+    <div class="bg-white rounded-xl p-6 max-w-sm w-full">
+      <h2 class="text-lg font-bold mb-4">Enter Your Phone Number</h2>
+      <input id="phoneInput" type="tel" placeholder="98XXXXXXXX or 97XXXXXXXX" class="w-full border px-4 py-2 rounded mb-4" />
+      <div class="flex justify-end space-x-2">
+        <button onclick="closeLoginModal()" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">Cancel</button>
+        <button onclick="submitPhone()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const cartDrawer = document.getElementById('cartDrawer');
+    const loginModal = document.getElementById('loginModal');
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+
+    let cart = [];
+
+    function toggleCart() {
+      cartDrawer.classList.toggle('translate-x-full');
+    }
+
+    function addToCart(itemName) {
+      cart.push(itemName);
+      updateCartUI();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      cartCount.textContent = cart.length;
+      cartItems.innerHTML = '';
+      cart.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'flex justify-between items-center bg-gray-100 p-2 rounded';
+        itemDiv.innerHTML = `
+          <span>${item}</span>
+          <button onclick="removeFromCart(${index})" class="text-red-600 hover:text-red-800">✖</button>
+        `;
+        cartItems.appendChild(itemDiv);
+      });
+    }
+
+    function openLoginModal() {
+      loginModal.classList.remove('hidden');
+      loginModal.classList.add('flex');
+    }
+
+    function closeLoginModal() {
+      loginModal.classList.add('hidden');
+      loginModal.classList.remove('flex');
+    }
+
+    function submitPhone() {
+      const phone = document.getElementById('phoneInput').value;
+      const phonePattern = /^(97|98)\d{8}$/;
+
+      if (!phonePattern.test(phone)) {
+        alert("Please enter a valid Nepali phone number (starts with 97 or 98)");
+        return;
+      }
+
+      // Replace this with a fetch() POST call later
+      console.log("Submitted phone:", phone);
+      alert("Phone number submitted: " + phone);
+      closeLoginModal();
+    }
+
+    loginModal.addEventListener('click', (e) => {
+      if (e.target === loginModal) {
+        closeLoginModal();
+      }
+    });
+  </script>
+
+</body>
+</html>

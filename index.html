@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <script src="app.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 fixed-top">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="#">Kickmandu</a> -->
+           <img src="img\logo.jpeg" alt="" style="height: 100px; width: auto;border-radius: 50%;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span > <i id="bar" class="fa-solid fa-bars"></i></span>
+          </button> 
+         
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="search1.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact-us.html">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="cart.html">Cart</a>
+              </li>
+              <li class="nav-item">
+                <li class="nav-item">
+                    <a href="search1.html">
+                    <i class="fa-solid fa-magnifying-glass"></i></a>
+              </li>
+              </li>
+             
+            </ul>
+            <!-- <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search sneakers..." />
+                <button onclick="handleSearch()" class="search-button">Search</button>
+              </div> -->
+            
+          </div>
+        </div>
+      </nav>
+<section id="home">
+
+    <div class="container">
+        <h5>STEP UP WITH KICKMANDU</h5>
+        <h1><span>STEP INTO</span> THE VALLEY</h1>
+        <p>Fresh footwear drops. Fast delivery across Nepal. Hype meets hustle.</p>
+        <button>Shop Now</button>
+    </div>
+</section>
+
+<section id="brand" class="container">
+  <div class="row m-0 py-5">
+      <h3 class="col-lg-2 col-md-4 col-6">Jordan</h3>
+      <h3 class="col-lg-2 col-md-4 col-6">Sneakers</h3>
+      <h3 class="col-lg-2 col-md-4 col-6">Sports</h3>
+      <h3 class="col-lg-2 col-md-4 col-6">Martins</h3>
+      <h3 class="col-lg-2 col-md-4 col-6">Converse</h3>
+      <h3 class="col-lg-2 col-md-4 col-6">Boots</h3>
+     
+  </div>
+</section>
+
+<section id="new" class="w-100">
+<div class="row p-0 m-0">
+  <div class="one col-lg-4 col-md-12 col-12 p-0">
+    <img class="img-fluid" src="img/banner/banner1.jpg" alt="">
+    <div class="details">
+      <h2>Extreme Rare Sneakers</h2>
+     <a href="search1.html"> <button class="text-uppercase">Shop Now</button></a>
+
+    </div>
+  </div>
+  <div class="one col-lg-4 col-md-12 col-12 p-0">
+    <img class="img-fluid" src="img/banner/banner2.jpg" alt="">
+    <div class="details">
+      <h2>Our Best Sales</h2>
+     <a href="search1.html"> <button class="text-uppercase">Shop Now</button></a>
+
+    </div>
+  </div>
+  <div class="one col-lg-4 col-md-12 col-12 p-0">
+    <img class="img-fluid" src="img/banner/banner3.jpg" alt="">
+    <div class="details">
+      <h2>Offers Upto 15% Off</h2>
+      <a href="search1.html"><button class="text-uppercase">Shop Now</button></a>
+
+    </div>
+  </div>
+</div>
+
+</section>
+
+<div class="container mt-5 py-5">
+  <!-- Section Header -->
+  <div class="text-center mb-5">
+    <h2 class="section-title">Our Featured Products</h2>
+    <p class="section-desc">Handpicked selections from our latest collections. These trending kicks are what everyone’s talking about right now!</p>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="row g-4">
+    <!-- Product 1 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">New</span>
+        <img src="img\shoes\loafer1.jpeg" class="card-img-top product-img" alt="Sneaker 1">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Air Max 97 SE</h6>
+          <div class="rating mb-2">★ ★ ★ ★ ☆ (120)</div>
+          <p class="price mb-2">$180</p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">-25%</span>
+        <img src="img\shoes\formal1.jpg" class="card-img-top product-img" alt="Sneaker 2">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Jordan 1 Retro</h6>
+          <div class="rating mb-2">★ ★ ★ ★ ★ (310)</div>
+          <p class="price mb-2">$150 <span class="text-muted text-decoration-line-through">$200</span></p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">Hot</span>
+        <img src="img\shoes\ccc.jpeg" class="card-img-top product-img" alt="Sneaker 3">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Yeezy Boost 350</h6>
+          <div class="rating mb-2">★ ★ ★ ☆ ☆ (87)</div>
+          <p class="price mb-2">$220</p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">Limited</span>
+        <img src="img\shoes\ccc.jpeg" class="card-img-top product-img" alt="Sneaker 4">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Nike Dunk Low</h6>
+          <div class="rating mb-2">★ ★ ★ ★ ☆ (205)</div>
+          <p class="price mb-2">$135</p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="banner" class="my-5 py-5">
+  <div class="container">
+    <h4>MID SEASON,S SALE</h4>
+    <h1>Autumn Collection <br> UP TP 20% OFF</h1>
+    <button class="text-uppercase">Shop Now</button>
+  </div>
+</section>
+ 
+<div class="container mt-5 py-5">
+  <!-- Section Header -->
+  <div class="text-center mb-5">
+    <h2 class="section-title">Our Featured Products</h2>
+    <p class="section-desc">Handpicked selections from our latest collections. These trending kicks are what everyone’s talking about right now!</p>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="row g-4">
+    <!-- Product 1 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">New</span>
+        <img src="img\shoes\loafer1.jpeg" class="card-img-top product-img" alt="Sneaker 1">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Air Max 97 SE</h6>
+          <div class="rating mb-2">★ ★ ★ ★ ☆ (120)</div>
+          <p class="price mb-2">$180</p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">-25%</span>
+        <img src="img\shoes\formal1.jpg" class="card-img-top product-img" alt="Sneaker 2">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Jordan 1 Retro</h6>
+          <div class="rating mb-2">★ ★ ★ ★ ★ (310)</div>
+          <p class="price mb-2">$150 <span class="text-muted text-decoration-line-through">$200</span></p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">Hot</span>
+        <img src="img\shoes\martin1.jpg" class="card-img-top product-img" alt="Sneaker 3">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Yeezy Boost 350</h6>
+          <div class="rating mb-2">★ ★ ★ ☆ ☆ (87)</div>
+          <p class="price mb-2">$220</p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+      <div class="card product-card position-relative">
+        <span class="badge-custom">Limited</span>
+        <img src="img\shoes\titex1.jpg" class="card-img-top product-img" alt="Sneaker 4">
+        <div class="card-body">
+          <h6 class="card-title mb-1">Nike Dunk Low</h6>
+          <div class="rating mb-2">★ ★ ★ ★ ☆ (205)</div>
+          <p class="price mb-2">$135</p>
+          <button class="btn btn-cart w-100">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <hr>
+  <div class="container mt-5 py-5">
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="section-title">Our Featured Products</h2>
+      <p class="section-desc">Handpicked selections from our latest collections. These trending kicks are what everyone’s talking about right now!</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">New</span>
+          <img src="img\shoes\loafer1.jpeg" class="card-img-top product-img" alt="Sneaker 1">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Air Max 97 SE</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ☆ (120)</div>
+            <p class="price mb-2">$180</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">-25%</span>
+          <img src="img\shoes\formal1.jpg" class="card-img-top product-img" alt="Sneaker 2">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Jordan 1 Retro</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ★ (310)</div>
+            <p class="price mb-2">$150 <span class="text-muted text-decoration-line-through">$200</span></p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">Hot</span>
+          <img src="img\shoes\martin1.jpg" class="card-img-top product-img" alt="Sneaker 3">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Yeezy Boost 350</h6>
+            <div class="rating mb-2">★ ★ ★ ☆ ☆ (87)</div>
+            <p class="price mb-2">$220</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">Limited</span>
+          <img src="img\shoes\formal1.jpg" class="card-img-top product-img" alt="Sneaker 4">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Nike Dunk Low</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ☆ (205)</div>
+            <p class="price mb-2">$135</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+  <div class="container mt-5 py-5">
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="section-title">Our Featured Products</h2>
+      <p class="section-desc">Handpicked selections from our latest collections. These trending kicks are what everyone’s talking about right now!</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">New</span>
+          <img src="img\shoes\loafer1.jpeg" class="card-img-top product-img" alt="Sneaker 1">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Air Max 97 SE</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ☆ (120)</div>
+            <p class="price mb-2">$180</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">-25%</span>
+          <img src="img\shoes\formal1.jpg" class="card-img-top product-img" alt="Sneaker 2">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Jordan 1 Retro</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ★ (310)</div>
+            <p class="price mb-2">$150 <span class="text-muted text-decoration-line-through">$200</span></p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">Hot</span>
+          <img src="img\shoes\ccc.jpeg" class="card-img-top product-img" alt="Sneaker 3">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Yeezy Boost 350</h6>
+            <div class="rating mb-2">★ ★ ★ ☆ ☆ (87)</div>
+            <p class="price mb-2">$220</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">Limited</span>
+          <img src="img\shoes\titex1.jpg" class="card-img-top product-img" alt="Sneaker 4">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Nike Dunk Low</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ☆ (205)</div>
+            <p class="price mb-2">$135</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container mt-5 py-5">
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="section-title">Our Featured Products</h2>
+      <p class="section-desc">Handpicked selections from our latest collections. These trending kicks are what everyone’s talking about right now!</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">New</span>
+          <img src="img\shoes\loafer1.jpeg" class="card-img-top product-img" alt="Sneaker 1">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Air Max 97 SE</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ☆ (120)</div>
+            <p class="price mb-2">$180</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">-25%</span>
+          <img src="img\shoes\OIP (1).jpeg" class="card-img-top product-img" alt="Sneaker 2">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Jordan 1 Retro</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ★ (310)</div>
+            <p class="price mb-2">$150 <span class="text-muted text-decoration-line-through">$200</span></p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">Hot</span>
+          <img src="img\shoes\OIP.jpeg" class="card-img-top product-img" alt="Sneaker 3">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Yeezy Boost 350</h6>
+            <div class="rating mb-2">★ ★ ★ ☆ ☆ (87)</div>
+            <p class="price mb-2">$220</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+        <div class="card product-card position-relative">
+          <span class="badge-custom">Limited</span>
+          <img src="img\shoes\titex1.jpg" class="card-img-top product-img" alt="Sneaker 4">
+          <div class="card-body">
+            <h6 class="card-title mb-1">Nike Dunk Low</h6>
+            <div class="rating mb-2">★ ★ ★ ★ ☆ (205)</div>
+            <p class="price mb-2">$135</p>
+            <button class="btn btn-cart w-100">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+  <div class="mt-5">
+  <footer class="footer mt-5 pt-5 pb-3">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <!-- Brand -->
+        <div class="col-md-3 mb-4">
+          <h4 class="fw-bold">Kickmandu</h4>
+          <p class="text-muted">Step into style. Nepal’s premium sneaker destination.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-light">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Delivery Info</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-light">Customer Service</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-light">Join Our Newsletter</h5>
+          <form class="d-flex flex-column">
+            <input type="email" class="form-control newsletter-input mb-2" placeholder="Your email" required>
+            <button class="btn subscribe-btn mb-3">Subscribe</button>
+          </form>
+          <div class="social-icons d-flex justify-content-center justify-content-md-start">
+            <a href="https://www.facebook.com/professional_dashboard/overview/?ref=profile_plus_left_nav"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom text-center pt-3 mt-3">
+        <p class="text-muted mb-0">&copy; 2025 Kickmandu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

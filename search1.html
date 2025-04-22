@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Kickmandu - Search Results</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /* body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff6b6b, #f06595);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    } */
+    @media (max-width: 600px) {
+  .search-container, .sort-container {
+    padding: 0 1rem;
+  }
+
+  .product-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .results-grid {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+
+    .custom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+  background: white;
+}
+
+.logo {
+  height: 60px;
+  border-radius: 50%;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .search-container {
+      margin-top: 1rem;
+    }
+
+    .search-container input[type="text"] {
+      padding: 0.6rem 1rem;
+      width: 250px;
+      max-width: 80%;
+      font-size: 1rem;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s ease-in-out;
+    }
+
+    .search-container input[type="text"]:focus {
+      border-color: #f06595;
+      box-shadow: 0 0 5px #f06595;
+    }
+
+    .search-container button {
+      padding: 0.6rem 1.2rem;
+      margin-left: 0.5rem;
+      background: #6c5ce7;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .search-container button:hover {
+      background: #5a4cd4;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      margin-top: 7rem;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+   
+
+
+    .product-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h3 {
+      margin: 0 0 0.5rem;
+      color: #444;
+    }
+
+    .product-card p {
+      margin: 0.3rem 0;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .sort-container {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .sort-container select {
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+    .top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #ff6b6b, #f06595);
+  color:#ffffff;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search-sort {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.search-sort input[type="text"] {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  max-width: 180px;
+}
+
+.search-sort button {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-sort button:hover {
+  background: #5a4cd4;
+}
+
+.search-sort select {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.footer {
+    background-color: #111;
+    color: #fff;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: #ccc;
+  }
+
+  .footer a:hover {
+    color: #fff;
+  }
+
+  .social-icons a {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #ccc;
+  }
+
+  .social-icons a:hover {
+    color: #fff;
+  }
+
+  .newsletter-input {
+    border: none;
+    border-radius: 0.375rem;
+  }
+
+  .subscribe-btn {
+    background-color: #f05a28;
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+  }
+
+  .subscribe-btn:hover {
+    background-color: #d94718;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #222;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+      <div class="logo">
+        <img src="img/logo.jpeg" alt="Logo">
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Cart</a>
+      </nav>
+      <div class="search-sort">
+        <input type="text" id="searchInput" placeholder="Search sneakers..." />
+        <button onclick="performSearch()">Search</button>
+        <select id="sortSelect" onchange="performSearch()">
+          <option value="">Sort By</option>
+          <option value="asc">Price: Low to High</option>
+          <option value="desc">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  
+
+  <div class="results-grid " id="results"></div>
+
+  <footer class="footer mt-5 pt-5 pb-3">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <!-- Brand -->
+        <div class="col-md-3 mb-4">
+          <h4 class="fw-bold">Kickmandu</h4>
+          <p class="text-muted">Step into style. Nepal’s premium sneaker destination.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-light">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Delivery Info</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-light">Customer Service</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-light">Join Our Newsletter</h5>
+          <form class="d-flex flex-column">
+            <input type="email" class="form-control newsletter-input mb-2" placeholder="Your email" required>
+            <button class="btn subscribe-btn mb-3">Subscribe</button>
+          </form>
+          <div class="social-icons d-flex justify-content-center justify-content-md-start">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom text-center pt-3 mt-3">
+        <p class="text-muted mb-0">&copy; 2025 Kickmandu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const products = [
+      { name: "AirMax 90", price: "$120", description: "Classic Nike AirMax with modern design.", image: "img/shoes/ccc.jpeg", tags: ["airmax", "nike", "comfort"] },
+      { name: "Adidas Ultraboost", price: "$150", description: "Running shoes with responsive cushioning.", image: "img/shoes/martin1.jpg", tags: ["adidas", "boost"] },
+      { name: "Puma RS-X", price: "$110", description: "Trendy chunky sneakers from Puma.", image: "img/shoes/OIP (1).jpeg", tags: ["puma", "chunky"] },
+      { name: "New Balance 574", price: "$100", description: "Iconic comfort and retro style.", image: "img/shoes/OIP.jpeg", tags: ["new balance"] },
+      { name: "Vans Old Skool", price: "$85", description: "Classic skate shoe design.", image: "img/shoes/loafer1.jpeg", tags: ["vans", "skate"] },
+      { name: "Jordan 1 Retro", price: "$200", description: "Timeless basketball sneaker.", image: "img/shoes/jordan2.jpeg", tags: ["jordan"] },
+      { name: "Yeezy Boost 350", price: "$250", description: "Iconic Kanye West design.", image: "img/shoes/OIP (1).jpeg", tags: ["yeezy"] },
+      { name: "Converse All Star", price: "$60", description: "Legendary canvas shoe.", image: "img/shoes/ss.jpeg", tags: ["converse"] },
+      { name: "Reebok Club C", price: "$75", description: "Minimal classic low-top.", image: "img/shoes/ccc.jpeg", tags: ["reebok"] },
+      { name: "ASICS Gel-Kayano", price: "$140", description: "Long distance comfort.", image: "img/shoes/martin1.jpg", tags: ["asics"] },
+      { name: "Nike Blazer Mid", price: "$100", description: "Vintage hoops-inspired look.", image: "img/shoes/titex1.jpg", tags: ["nike"] },
+      { name: "Fila Disruptor", price: "$95", description: "Chunky and stylish design.", image: "img/shoes/ccc.jpeg", tags: ["fila"] },
+      { name: "Under Armour HOVR", price: "$130", description: "Performance training shoe.", image: "img/shoes/ccc.jpeg", tags: ["under armour"] },
+      { name: "Nike Air Force 1", price: "$110", description: "All-time favorite lifestyle shoe.", image: "img/shoes/ccc.jpeg", tags: ["air force"] },
+      { name: "Skechers D'Lites", price: "$90", description: "Stylish and comfortable.", image: "img/shoes/ccc.jpeg", tags: ["skechers"] },
+      { name: "On Running Cloud", price: "$160", description: "Performance meets comfort.", image: "img/shoes/ccc.jpeg", tags: ["on running"] },
+      { name: "Nike React Infinity", price: "$130", description: "High-mileage support.", image: "img/shoes/ccc.jpeg", tags: ["react"] },
+      { name: "Hoka One One Clifton", price: "$145", description: "Ultra cushioned trainer.", image: "img/shoes/ccc.jpeg", tags: ["hoka"] },
+      { name: "Crocs Classic Clog", price: "$45", description: "Everyday wear comfort.", image: "img/shoes/ccc.jpeg", tags: ["crocs"] },
+      { name: "Balenciaga Triple S", price: "$895", description: "High-end fashion sneaker.", image: "img/shoes/ccc.jpeg", tags: ["balenciaga"] }
+    ];
+
+    function performSearch() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const sort = document.getElementById("sortSelect").value;
+      const resultsContainer = document.getElementById("results");
+      resultsContainer.innerHTML = "";
+
+      let filtered = products.filter(product =>
+        product.name.toLowerCase().includes(input) ||
+        product.description.toLowerCase().includes(input) ||
+        product.tags.some(tag => tag.includes(input))
+      );
+
+      if (sort === "asc") {
+        filtered.sort((a, b) => extractPrice(a.price) - extractPrice(b.price));
+      } else if (sort === "desc") {
+        filtered.sort((a, b) => extractPrice(b.price) - extractPrice(a.price));
+      }
+
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = '<p style="padding:2rem">No products found. Try another keyword!</p>';
+      } else {
+        filtered.forEach(product => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <h3>${product.name}</h3>
+            <p><strong>Price:</strong> ${product.price}</p>
+            <p>${product.description}</p>
+          `;
+          resultsContainer.appendChild(card);
+        });
+      }
+    }
+
+    function extractPrice(priceString) {
+      return parseFloat(priceString.replace(/[^\d\.]/g, ''));
+    }
+  </script>
+  <script>
+    const resultsContainer = document.getElementById("results");
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+  
+    function performSearch() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const sortOption = sortSelect.value;
+  
+      let filteredProducts = products.filter(product => {
+        const nameMatch = product.name.toLowerCase().includes(searchTerm);
+        const tagMatch = product.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+        return nameMatch || tagMatch;
+      });
+  
+      // Sort based on selected option
+      if (sortOption === "asc") {
+        filteredProducts.sort((a, b) => extractPrice(a.price) - extractPrice(b.price));
+      } else if (sortOption === "desc") {
+        filteredProducts.sort((a, b) => extractPrice(b.price) - extractPrice(a.price));
+      }
+  
+      displayResults(filteredProducts);
+    }
+  
+    function extractPrice(priceStr) {
+      return parseFloat(priceStr.replace('$', ''));
+    }
+  
+    function displayResults(products) {
+      resultsContainer.innerHTML = "";
+      if (products.length === 0) {
+        resultsContainer.innerHTML = "<p>No sneakers found.</p>";
+        return;
+      }
+  
+      products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+  
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
+          <p><strong>${product.price}</strong></p>
+        `;
+  
+        resultsContainer.appendChild(productCard);
+      });
+    }
+  
+    // Optional: display all on initial load
+    displayResults(products);
+  </script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+  
+  
+</body>
+</html>

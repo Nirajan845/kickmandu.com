@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kickmandu</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+.navbar {
+    /* background-color: #333; */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    /* color: white; */
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li {
+    margin: 0;
+}
+
+.navbar-links a {
+    /* color: white; */
+    color: #111;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-links .active {
+    font-weight: bold;
+    color: #f79c42;
+}
+
+/* Contact Us Section */
+.contact-us {
+    margin-top: 80px;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button.submit-btn {
+    background-color: #f79c42;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button.submit-btn:hover {
+    background-color: #e68931;
+}
+
+.contact-info {
+    margin-top: 40px;
+}
+
+.contact-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+}
+.footer {
+    background-color: #111;
+    color: #fff;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: #ccc;
+  }
+
+  .footer a:hover {
+    color: #fff;
+  }
+
+  .social-icons a {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #ccc;
+  }
+
+  .social-icons a:hover {
+    color: #fff;
+  }
+
+  .newsletter-input {
+    border: none;
+    border-radius: 0.375rem;
+  }
+
+  .subscribe-btn {
+    background-color: #f05a28;
+    color: #fff;
+    border: none;
+    border-radius: 0.375rem;
+  }
+
+  .subscribe-btn:hover {
+    background-color: #d94718;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #222;
+  }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="img/logo.jpeg" alt="" class="navbar-logo" style="width: auto;height: 80px;border-radius: 50%;">
+           
+            <ul class="navbar-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p>We're here to help! If you have any questions, feel free to reach out.</p>
+
+            <div class="contact-form">
+                <form action="/submit_contact" method="POST">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h2>Our Office</h2>
+                <p><strong>Address:</strong> Kathmandu, Nepal</p>
+                <p><strong>Phone:</strong> +977 1-XXXXXXX</p>
+                <p><strong>Email:</strong> support@kickmandu.com</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer mt-5 pt-5 pb-3">
+        <div class="container">
+          <div class="row text-center text-md-start">
+            <!-- Brand -->
+            <div class="col-md-3 mb-4">
+              <h4 class="fw-bold">Kickmandu</h4>
+              <p class="text-muted">Step into style. Nepal’s premium sneaker destination.</p>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="col-md-3 mb-4">
+              <h5 class="text-light">Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Delivery Info</a></li>
+                <li><a href="#">Return Policy</a></li>
+              </ul>
+            </div>
+    
+            <!-- Customer Service -->
+            <div class="col-md-3 mb-4">
+              <h5 class="text-light">Customer Service</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+    
+            <!-- Newsletter -->
+            <div class="col-md-3 mb-4">
+              <h5 class="text-light">Join Our Newsletter</h5>
+              <form class="d-flex flex-column">
+                <input type="email" class="form-control newsletter-input mb-2" placeholder="Your email" required>
+                <button class="btn subscribe-btn mb-3">Subscribe</button>
+              </form>
+              <div class="social-icons d-flex justify-content-center justify-content-md-start">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer bottom -->
+          <div class="footer-bottom text-center pt-3 mt-3">
+            <p class="text-muted mb-0">&copy; 2025 Kickmandu. All rights reserved.</p>
+          </div>
+        </div>
+      </footer> 
+
+</body>
+</html>
